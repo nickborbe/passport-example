@@ -23,7 +23,7 @@ const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/passport-example', {useMongoClient: true})
+  .connect(proces.env.MONGODB_URI, {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
